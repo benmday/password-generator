@@ -48,8 +48,61 @@ function generatePassword() {
     passwordPossibilities += symbols;
   } 
 
-  
+  var password = "";
+ 
+  function createPassword() {
+    password = "";
+    for (var i = 0; i < Number(length); i++) {
+      password += passwordPossibilities[Math.floor(Math.random() * passwordPossibilities.length)]
+    }
+  }
 
+  var lowercaseCheck = false;
+  var uppercaseCheck = false;
+  var numbersCheck = false;
+  var symbolsCheck = false;
+
+  while ((hasLowercase && !lowercaseCheck) || (hasUppercase && !uppercaseCheck) || (hasNumbers && !numbersCheck) || (hasSymbols && !symbolsCheck)) {
+    createPassword()
+    if (hasLowercase) {
+      for (var i = 0; i < lowercase.length; i++) {
+       if (password.includes(lowercase[i])) {
+        lowercaseCheck = true;
+        break
+       }
+      } 
+    }
+  
+    if (hasUppercase) {
+      for (var i = 0; i < uppercase.length; i++) {
+       if (password.includes(uppercase[i])) {
+        uppercaseCheck = true;
+        break
+       }
+      } 
+    }
+  
+    if (hasNumbers) {
+      for (var i = 0; i < numbers.length; i++) {
+       if (password.includes(numbers[i])) {
+        numbersCheck = true;
+        break
+       }
+      } 
+    }
+  
+    if (hasSymbols) {
+      for (var i = 0; i < symbols.length; i++) {
+       if (password.includes(symbols[i])) {
+        symbolsCheck = true;
+        break
+       }
+      } 
+    }
+  }
+  
+  return password;
+  
 }
 // Write password to the #password input
 function writePassword() {
