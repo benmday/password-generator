@@ -1,4 +1,4 @@
-# challenge-week-3
+# Password Generator
 
 ## Description
 
@@ -12,6 +12,8 @@ Clone this repo
 
 To use this application to generate a unique password, visit the published website on GitHub Pages. 
 Click "Generate Password" and a series of prompts will appear at the top of the page with password criteria. Once you have made your selection of length and what characters you would like to include, your unique password will be generated, according to the selected criteria. You may then use the password as you prefer to secure any account you may have.  
+
+Deployed app: https://benmday.github.io/password-generator/
 
 ## Credits
 
